@@ -29,13 +29,12 @@ export class ProductSearchPage implements OnInit {
 
   onAddToCart(product: Product) {
     this.cartProducts ??= [];
-    this.cartProducts.push(product);
+    this.cartProducts = [...this.cartProducts, product]
   }
 
   private loadProducts() {
-    this.products.splice(0, this.products.length);
     const products = this.productHttpService.getStaticProductsByCategory(this.category)
-    this.products.push(...products);
+    this.products = products;
   }
 
 }

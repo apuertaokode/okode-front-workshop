@@ -3,7 +3,7 @@
 
     <div class="p-pruduct-search">
 
-        <input class="p-pruduct-search__search-input" placeholder="Buscar productos" [(ngModel)]="searchTerm">
+        <input class="p-pruduct-search__search-input" placeholder="Buscar productos" [(ngModel)]="searchTerm" (keyup)="search()">
 
         <div class="p-pruduct-search__grid">
             <product-search-item [product]="product" *ngFor="let product of products"></product-search-item>
